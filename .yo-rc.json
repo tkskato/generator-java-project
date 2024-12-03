@@ -1,0 +1,6 @@
+{
+    "generator-java-project": {
+        "basePkg": "dev.aulait.svqk",
+        "archPkg": "dev.aulait.svqk.arch"
+    }
+}

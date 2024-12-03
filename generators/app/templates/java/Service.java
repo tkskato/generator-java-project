@@ -1,4 +1,4 @@
-package <%= packageName %>;
+package <%= pkgName %>;
 
 import static <%= archBasePkg %>.jpa.JpaRepositoryHandler.findByIdAsResource;
 
@@ -13,21 +13,21 @@ import lombok.RequiredArgsConstructor;
 
 @ApplicationScoped
 @RequiredArgsConstructor
-public class <%= domainName %>Service {
+public class <%= entityName %>Service {
 
-  private final <%= domainName %>Repository repository;
+  private final <%= entityName %>Repository repository;
   private final EntityManager em;
 
   @Transactional
-  public <%= domainName %>Entity save(<%= domainName %>Entity entity) {
+  public <%= entityName %>Entity save(<%= entityName %>Entity entity) {
     return repository.save(entity);
   }
 
-  public <%= domainName %>Entity find(int id) {
+  public <%= entityName %>Entity find(int id) {
     return findByIdAsResource(repository, id);
   }
 
-  public SearchResultVo<<%= domainName %>Entity> search(SearchConditionVo condition) {
+  public SearchResultVo<<%= entityName %>Entity> search(SearchConditionVo condition) {
     return SearchUtils.search(em, condition);
   }
 }
